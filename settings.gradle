@@ -1,0 +1,24 @@
+rootProject.name = "quiz"
+include "web",
+        "common-api",
+        "quiz-api",
+        "user-api",
+        "admin-api",
+        "quiz-dao",
+        "user-dao",
+        "quiz-service",
+        "user-service"
+
+project(":web").projectDir = "$rootDir/web" as File
+
+project(":common-api").projectDir = "$rootDir/api/common-api" as File
+
+project(":quiz-api").projectDir = "$rootDir/api/quiz-api" as File
+project(":quiz-dao").projectDir = "$rootDir/dao/quiz-dao" as File
+
+project(":user-api").projectDir = "$rootDir/api/user-api" as File
+project(":user-dao").projectDir = "$rootDir/dao/user-dao" as File
+project(":user-service").projectDir = "$rootDir/service/user-service" as File
+
+project(":admin-api").projectDir = "$rootDir/api/admin-api" as File
+project(":quiz-service").projectDir = "$rootDir/service/quiz-service" as File

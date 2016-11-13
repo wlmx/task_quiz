@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Сервисы-->
+    <import resource="classpath*:/quiz-service-context.xml"/>
+    <import resource="classpath*:/user-service-context.xml"/>
+
+    <!--DAO-->
+    <import resource="classpath*:/user-dao-context.xml"/>
+    <import resource="classpath*:/quiz-dao-context.xml"/>
+
+</beans>

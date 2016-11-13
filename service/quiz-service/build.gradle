@@ -1,0 +1,10 @@
+group 'com.maximov.quiz'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compile libraries.slf4j
+    compile project(':admin-api')
+    compile project(':quiz-api')
+    compile project(':user-dao')
+    compile project(':quiz-dao')
+}

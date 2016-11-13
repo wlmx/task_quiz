@@ -1,0 +1,45 @@
+group 'com.maximov.quiz'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+ext.libraries = [
+        spring_context        : "org.springframework:spring-context:4.3.4.RELEASE",
+        spring_tx             : "org.springframework:spring-tx:4.3.4.RELEASE",
+        spring_webmvc         : "org.springframework:spring-webmvc:4.3.4.RELEASE",
+        spring_orm            : "org.springframework:spring-orm:4.3.4.RELEASE",
+        spring_security_web   : "org.springframework.security:spring-security-web:4.2.0.RELEASE",
+        spring_security_config: "org.springframework.security:spring-security-config:4.2.0.RELEASE",
+        spring_test           : "org.springframework:spring-test:4.3.3.RELEASE",
+        jackson               : "com.fasterxml.jackson.core:jackson-databind:2.8.4",
+        hibernate_core        : "org.hibernate:hibernate-core:5.2.4.Final",
+        h2_database           : "com.h2database:h2:1.4.193",
+        junit                 : "junit:junit:4.12",
+        mockito               : "org.mockito:mockito-core:1.10.19",
+        slf4j                 : "org.slf4j:slf4j-simple:1.7.21",
+        logback_classic       : "ch.qos.logback:logback-classic:1.1.7",
+        logback_core          : "ch.qos.logback:logback-core:1.1.7"
+
+]
+
+allprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+
+    [compileJava, compileTestJava]*.options.collect { options ->
+        options.encoding = 'UTF-8'
+    }
+
+    dependencies {
+        compile libraries.spring_context
+        compile libraries.spring_tx
+        testCompile libraries.junit
+        testCompile libraries.mockito
+        testCompile libraries.spring_test
+    }
+}

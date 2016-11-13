@@ -1,0 +1,23 @@
+group 'com.maximov.quiz'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+dependencies {
+    compile libraries.spring_webmvc
+    compile libraries.jackson
+    compile libraries.h2_database
+    compile libraries.hibernate_core
+    compile libraries.spring_orm
+    compile libraries.spring_security_web
+    compile libraries.spring_security_config
+    compile libraries.slf4j
+    compile libraries.logback_classic
+    compile libraries.logback_core
+    compile project(':quiz-service')
+    compile project(':user-dao')
+    compile project(':user-service')
+    compile project(':quiz-dao')
+
+}
